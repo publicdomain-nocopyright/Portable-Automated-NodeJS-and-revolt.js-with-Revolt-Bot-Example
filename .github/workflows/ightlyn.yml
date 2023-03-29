@@ -1,21 +1,28 @@
-name: Nightly Release
+---
+name: "pre-release"
 
 on:
   push:
     branches:
-      - main
+      - "master"
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  pre-release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Create Release
-        uses: marvinpinto/action-automatic-releases@latest
+      # ...
+      - name: "Build & test"
+        run: |
+          echo "done!"
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          automatic_release_tag: nightly-$(date +'%Y%m%d')
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
           prerelease: true
-          files: '**/*'
-          title: Nightly Release $(date +'%Y-%m-%d')
+          title: "Development Build"
+          files: |
+            LICENSE.txt
+            *.jar
