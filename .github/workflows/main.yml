@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with the GitHub Auto-Release on Commit Action.
+
+
+on:
+  push:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  release:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - name: Create nightly release
+      id: create_release
+      uses: viperproject/create-nightly-release@v1
+      env:
+        # This token is provided by Actions, you do not need to create your own token
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.TAG_NAME }}
+        release_name: Nightly Release ${{ env.TAG_NAME }}
+        body: Body for the release
+        keep_num: 0
+        keep_tags: false
