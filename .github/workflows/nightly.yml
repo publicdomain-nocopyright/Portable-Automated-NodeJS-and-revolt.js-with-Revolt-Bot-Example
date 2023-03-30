@@ -1,4 +1,4 @@
-name: Create Prerelease on Push
+name: Create Prerelease or latest release on Push
 # description: Create a Prerelease when pushing commits to the main branch.
 # author: Public Domain
 # version: v1
