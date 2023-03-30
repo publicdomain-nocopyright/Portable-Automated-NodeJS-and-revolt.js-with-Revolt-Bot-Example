@@ -7,13 +7,13 @@ on:
   push:
     branches:
       - main
-    # Trigger a prerelease when committing to certain files or folders.
+    # ______ Trigger a prerelease when committing to certain files or folders.
     #paths: 
     #  - '**.cmd'     # All .cmd Files of the repository.
     #  - 'README.md'  # README.md File of the repository.
     #  - 'LICENSE'    # LICENSE File of the repository.
     #  - '.github/**' # .github/workflows Folder
-    # You cannot use both the paths and paths-ignore filters for the same event in a workflow.
+    # ______ You cannot use both the paths and paths-ignore filters for the same event in a workflow.
     #paths-ignore: 
     #  - '**.cmd'     # All .cmd Files of the repository.
     #  - 'README.md'  # README.md File of the repository.
