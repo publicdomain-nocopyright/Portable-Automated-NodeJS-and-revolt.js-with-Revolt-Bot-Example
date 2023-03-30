@@ -49,5 +49,3 @@ ECHO 11. Starting Revolt.js bot example.
 node "./bot.js" "%bot_token%"
 
 cmd ".\"
-
-##test
