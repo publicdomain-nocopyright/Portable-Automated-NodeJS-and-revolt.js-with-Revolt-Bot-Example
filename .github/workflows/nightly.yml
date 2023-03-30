@@ -3,6 +3,11 @@ name: Create Prerelease or latest release on Push
 # author: Public Domain
 # version: v1
 
+# GitHub Pre-Release Visibility
+# To avoid a pre-release file appearing as the latest release on a GitHub repository's overview, 
+# delete the '#' before 'pre-release', and it will only be found in the Releases section with a 
+# pre-release badge.
+
 on:
   push:
     branches:
