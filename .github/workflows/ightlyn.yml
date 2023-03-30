@@ -2,8 +2,6 @@ name: Releases
 
 on: 
   push:
-    tags:
-    - 'latest'
     branches:
       - "main"
 
@@ -17,5 +15,6 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ncipollo/release-action@v1
       with:
+        generateReleaseNotes: true
+        prerelease: ${{ endsWith(github.ref, 'nightly') }}
         artifacts: "*"
-        bodyFile: "body.md"
