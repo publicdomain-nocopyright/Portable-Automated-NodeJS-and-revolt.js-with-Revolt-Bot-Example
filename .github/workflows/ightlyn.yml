@@ -21,3 +21,4 @@ jobs:
           It may contain bugs or unfinished features.
         tag: ${{ github.ref }}
         artifacts: '*' 
+        allowUpdates: true
