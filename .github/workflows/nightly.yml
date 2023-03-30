@@ -28,4 +28,4 @@ jobs:
         tag: ${{ github.ref }}
         artifacts: '*' 
         allowUpdates: true
-        makeLatest: true
+        makeLatest: true # Probably not necessary.
