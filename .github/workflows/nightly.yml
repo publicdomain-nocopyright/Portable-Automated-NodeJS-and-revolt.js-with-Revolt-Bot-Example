@@ -1,25 +1,21 @@
-name: Create Prerelease on Push
-‎
+name: Create Prerelease
+
 on:
   push:
     branches:
       - main
-‎
+
 jobs:
   create_prerelease:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-‎
-    - name: Create Prerelease
-      uses: ncipollo/release-action@v1
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2.5.0
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        prerelease: true
-        body: |
-          This is a prerelease.
-          It may contain bugs or unfinished features.
-        tag: ${{ github.ref }}
-        artifacts: '*' 
-        allowUpdates: true
-       # makeLatest: true
+        node-version: '14.x'
+    - name: Install dependencies
+      run: npm install
+    - name: Build and package artifacts
+      run:
