@@ -1,20 +1,22 @@
-name: Releases
+name: Create Prerelease on Push
 
-on: 
+on:
   push:
     branches:
-      - "main"
+      - main
 
 jobs:
-
-  build:
+  create_prerelease:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
     - uses: actions/checkout@v2
-    - uses: ncipollo/release-action@v1
+
+    - name: Create Prerelease
+      uses: ncipollo/release-action@v1
       with:
-        generateReleaseNotes: true
-        prerelease: ${{ endsWith(github.ref, 'Development Build') }}
-        artifacts: "*"
+        token: ${{ secrets.GITHUB_TOKEN }}
+        prerelease: true
+        body: |
+          This is a prerelease.
+          It may contain bugs or unfinished features.
+        tag: ${{ github.ref }}
