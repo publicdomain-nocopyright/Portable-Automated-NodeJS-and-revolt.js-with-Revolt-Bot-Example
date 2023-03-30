@@ -14,11 +14,11 @@ on:
     #  - 'LICENSE'    # LICENSE File of the repository.
     #  - '.github/**' # .github/workflows Folder
     # You cannot use both the paths and paths-ignore filters for the same event in a workflow.
-    paths-ignore: 
-      - '**.cmd'     # All .cmd Files of the repository.
-      - 'README.md'  # README.md File of the repository.
-      - 'LICENSE'    # LICENSE File of the repository.
-      - '.github/**' # .github/workflows Folder
+    #paths-ignore: 
+    #  - '**.cmd'     # All .cmd Files of the repository.
+    #  - 'README.md'  # README.md File of the repository.
+    #  - 'LICENSE'    # LICENSE File of the repository.
+    #  - '.github/**' # .github/workflows Folder
 jobs:
   create_prerelease:
     runs-on: ubuntu-latest
