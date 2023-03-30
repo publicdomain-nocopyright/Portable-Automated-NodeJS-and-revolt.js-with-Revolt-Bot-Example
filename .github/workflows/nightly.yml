@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '**.cmd'
+      - 'README.md'
+      - 'LICENSE'
 
 jobs:
   create_prerelease:
