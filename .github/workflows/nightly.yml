@@ -5,10 +5,10 @@ on:
     branches:
       - main
     paths:
-      - '**.cmd'
-      - 'README.md'
-      - 'LICENSE'
-      - '.github/**'
+      - '**.cmd'     # All .cmd Files of the repository.
+      - 'README.md'  # README.md File of the repository.
+      - 'LICENSE'    # LICENSE File of the repository.
+      - '.github/**' # .github/workflows Folder
 
 jobs:
   create_prerelease:
