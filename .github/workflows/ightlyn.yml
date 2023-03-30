@@ -20,4 +20,4 @@ jobs:
           This is a prerelease.
           It may contain bugs or unfinished features.
         tag: ${{ github.ref }}
-        artifacts: '*'
+        artifacts: '*' 
