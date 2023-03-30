@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - main
-    #paths:
+    # Trigger a prerelease when committing to certain files or folders.
+    #paths: 
     #  - '**.cmd'     # All .cmd Files of the repository.
     #  - 'README.md'  # README.md File of the repository.
     #  - 'LICENSE'    # LICENSE File of the repository.
