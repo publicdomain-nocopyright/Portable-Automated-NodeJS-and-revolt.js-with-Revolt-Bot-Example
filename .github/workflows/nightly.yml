@@ -1,7 +1,7 @@
 name: Create Prerelease on Push
-description: Create a Prerelease when pushing commits to the main branch.
-author: Public Domain
-version: v1
+# description: Create a Prerelease when pushing commits to the main branch.
+# author: Public Domain
+# version: v1
 
 on:
   push:
