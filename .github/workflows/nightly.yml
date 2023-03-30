@@ -8,6 +8,7 @@ on:
       - '**.cmd'
       - 'README.md'
       - 'LICENSE'
+      - '.github/*'
 
 jobs:
   create_prerelease:
