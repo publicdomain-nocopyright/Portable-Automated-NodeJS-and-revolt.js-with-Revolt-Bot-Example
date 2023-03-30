@@ -50,4 +50,4 @@ node "./bot.js" "%bot_token%"
 
 cmd ".\"
 
-##
+##test
