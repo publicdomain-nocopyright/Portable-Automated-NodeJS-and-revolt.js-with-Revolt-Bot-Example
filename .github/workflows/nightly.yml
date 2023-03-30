@@ -15,11 +15,11 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        prerelease: true
+        #prerelease: true
         body: |
           This is a prerelease.
           It may contain bugs or unfinished features.
         tag: ${{ github.ref }}
         artifacts: '*' 
         allowUpdates: true
-        #makeLatest: true
+        makeLatest: true
