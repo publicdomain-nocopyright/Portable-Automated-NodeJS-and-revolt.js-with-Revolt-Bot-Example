@@ -42,7 +42,10 @@ curl "https://raw.githubusercontent.com/BoQsc/How-to-Make-a-bot-using-Revolt.js/
 ECHO 10. Please insert Bot Token:
 ECHO A Browser Window to browse your bots will be opened.
 TIMEOUT /T 10
-explorer "https://app.revolt.chat/settings/bots"
+tasklist /FI "IMAGENAME eq chrome.exe" 2>NUL | find /I /N "chrome.exe">NUL && (
+echo Google Chrome is running. & start chrome.exe "https://app.revolt.chat/settings/bots") || (
+echo Google Chrome is not running. & start explorer "https://app.revolt.chat/settings/bots")
+
 SET /p "bot_token=Enter Bot Token: "
 
 ECHO 11. Starting Revolt.js bot example.
