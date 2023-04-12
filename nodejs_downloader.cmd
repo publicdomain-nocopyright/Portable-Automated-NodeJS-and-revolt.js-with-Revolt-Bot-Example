@@ -4,17 +4,13 @@ TITLE Portable Automated NodeJS with revolt.js and Revolt Bot Example.
 SET "requirements_met=true"
 
 ECHO Checking Requirements...
-
-IF NOT EXIST %SYSTEMROOT%\System32\curl.exe (
-ECHO  - curl command not found. Please install curl and add it to PATH environment variable. && SET "requirements_met=false"
-) ELSE (
-ECHO  + curl command found.
-)
-
-IF NOT EXIST %SYSTEMROOT%\System32\tar.exe (
-ECHO  - tar command not found. Please install tar and add it to PATH environment variable. && SET "requirements_met=false"
-) ELSE (
-ECHO  + tar command found.
+FOR %%X IN (curl.exe tar.exe) DO (
+    IF NOT EXIST "%SYSTEMROOT%\System32\%%X" (
+        ECHO - %%X command not found. Please install %%X and add it to PATH environment variable.
+        SET "requirements_met=false"
+    ) ELSE (
+        ECHO + %%X command found.
+    )
 )
 
 IF "%requirements_met%"=="true" (
