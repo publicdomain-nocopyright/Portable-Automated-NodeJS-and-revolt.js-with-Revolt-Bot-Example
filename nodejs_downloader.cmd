@@ -67,6 +67,7 @@ echo Google Chrome is running. & start chrome.exe "https://app.revolt.chat/setti
 echo Google Chrome is not running. & start explorer "https://app.revolt.chat/settings/bots")
 
 SET /p "bot_token=Enter Bot Token: "
+ECHO | SET /p=%bot_token%> bot_token.txt
 
 ECHO 11. Starting Revolt.js bot example.
 node "./bot.js" "%bot_token%"
