@@ -1,6 +1,30 @@
 @ECHO OFF
 TITLE Portable Automated NodeJS with revolt.js and Revolt Bot Example.
 
+SET "requirements_met=true"
+
+ECHO Checking Requirements...
+
+IF NOT EXIST %SYSTEMROOT%\System32\curl.exe (
+ECHO  - curl command not found. Please install curl and add it to PATH environment variable. && SET "requirements_met=false"
+) ELSE (
+ECHO  + curl command found.
+)
+
+IF NOT EXIST %SYSTEMROOT%\System32\tar.exe (
+ECHO  - tar command not found. Please install tar and add it to PATH environment variable. && SET "requirements_met=false"
+) ELSE (
+ECHO  + tar command found.
+)
+
+IF "%requirements_met%"=="true" (
+ECHO All requirements met. You can run the script.
+) ELSE (
+ECHO Please install the missing requirements and try again. && PAUSE && EXIT
+)
+
+
+
 REM Download SHASUMS256.txt to FIND latest NodeJS release filename
 ECHO 1. Downloading SHASUMS256.txt
 curl https://nodejs.org/dist/latest/SHASUMS256.txt > ".\SHASUMS256.txt"
