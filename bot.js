@@ -37,7 +37,9 @@ client.on("ready", async () => {
 client.on("messageCreate", async (message) => {
 	if (message.content === "hello") {
 		
-		message.channel.sendMessage("world");
+		await message.channel.sendMessage("world");
+		
+		
 	}
 });
 
