@@ -34,8 +34,9 @@ client.on("ready", async () => {
 	});
 });
 
-client.on("message", async (message) => {
+client.on("messageCreate", async (message) => {
 	if (message.content === "hello") {
+		
 		message.channel.sendMessage("world");
 	}
 });
