@@ -32,6 +32,13 @@ client.on("ready", async () => {
 			presence: "Idle",
 		},
 	});
+	
+	
+	
+	
+	
+	
+	
 });
 
 client.on("messageCreate", async (message) => {
