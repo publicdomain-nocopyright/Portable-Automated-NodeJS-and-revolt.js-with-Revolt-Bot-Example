@@ -43,7 +43,8 @@ client.on("messageCreate", async (message) => {
 	}
 });
 
-// `node bot.js YOUR_BOT_TOKEN` command line token insertion support | Ignored if bot_token.txt token exists | Inserted into bot_token.txt if file is empty
+// `node bot.js YOUR_BOT_TOKEN` command line token insertion support 
+//  NOTE: Ignored if bot_token.txt token exists | Inserted into bot_token.txt if file is empty
 let bot_token = process.argv[2];
 
 // Search and Read Bot Token from bot_token.txt file
