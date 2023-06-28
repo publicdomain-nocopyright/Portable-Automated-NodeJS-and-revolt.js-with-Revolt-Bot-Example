@@ -48,7 +48,7 @@ client.on("messageCreate", async (message) => {
 let bot_token = process.argv[2];
 
 // Search and Read Bot Token from bot_token.txt file
-var fs = require('fs');
+const fs = require('fs');
 if (fs.existsSync("./bot_token.txt")) {
 	if (fs.statSync('./bot_token.txt').size == 0) {
 		console.log("./bot_token.txt file is empty")
