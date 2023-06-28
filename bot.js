@@ -6,10 +6,8 @@ let client = new Client();
 
 // ----------------------- General Bot information -------------------------
 client.on("ready", async () => {
-	
-	// Opens a browser tab in Windows 10; Uses bot user id, opens bot invite url 
-	
-	// Check if bot joined any servers yet.
+
+	// Checks if bot joined any servers yet. Opens a browser tab in Windows 10; Uses bot user id, opens bot invite url 
 	if (client.servers.size < 1) {
 		const { spawn } = require('node:child_process')
 		const command = spawn('explorer', ["https://app.revolt.chat/bot/"+ client.user._id])
