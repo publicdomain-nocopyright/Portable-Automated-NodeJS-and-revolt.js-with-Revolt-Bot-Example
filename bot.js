@@ -64,10 +64,12 @@ if (fs.statSync('./bot_token.txt').size == 0) {
 	bot_token = fs.readFileSync('./bot_token.txt','utf8');
 }
 
+// Check if bot_token is not undefined
 console.log("Bot token entered: ", bot_token);
 if (bot_token == undefined) {
 	console.log(bot_token + " bot token undefined?");
 	process.exit(0);
 }
 
+// Start the bot and login to Revolt
 client.loginBot(bot_token);
