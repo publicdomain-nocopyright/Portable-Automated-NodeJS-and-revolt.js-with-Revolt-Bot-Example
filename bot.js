@@ -49,20 +49,17 @@ let bot_token = process.argv[2];
 
 // Search and Read Bot Token from bot_token.txt file
 const fs = require('fs');
-if (fs.existsSync("./bot_token.txt")) {
-	if (fs.statSync('./bot_token.txt').size == 0) {
-		console.log("./bot_token.txt file is empty")
-	} else {
-		console.log("bot_token.txt file is not empty")
-		bot_token = fs.readFileSync('./bot_token.txt','utf8');
-	}
-
-
-} else {
-	
+if (!fs.existsSync("./bot_token.txt")) {
 	const stream = fs.createWriteStream('./bot_token.txt');
 	stream.write("");
 	stream.end();
+}
+
+if (fs.statSync('./bot_token.txt').size == 0) {
+	console.log("./bot_token.txt file is empty")
+} else {
+	console.log("bot_token.txt file is not empty")
+	bot_token = fs.readFileSync('./bot_token.txt','utf8');
 }
 
 console.log("Bot token entered: ", bot_token);
