@@ -31,12 +31,6 @@ client.on("ready", async () => {
 		},
 	});
 	
-	
-	
-	
-	
-	
-	
 });
 
 client.on("messageCreate", async (message) => {
