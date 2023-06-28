@@ -3,6 +3,7 @@ const { Client } = require("revolt.js");
 
 let client = new Client();
 
+// ----------------------- General Bot information -------------------------
 client.on("ready", async () => {
 	
 	// Open a browser tab in Windows 10; uses bot UserID, opens bot invite url 
