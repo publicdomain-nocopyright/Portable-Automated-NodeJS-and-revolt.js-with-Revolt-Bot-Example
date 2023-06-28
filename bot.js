@@ -1,4 +1,5 @@
 // This is a bot.js example.
+
 const { Client } = require("revolt.js");
 
 let client = new Client();
