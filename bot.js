@@ -47,7 +47,7 @@ client.on("messageCreate", async (message) => {
 //  NOTE: Ignored if bot_token.txt token exists | Inserted into bot_token.txt if file is empty
 let bot_token = process.argv[2];
 
-// Search and Read Bot Token from bot_token.txt file
+// Create bot_token.txt file if does not exist.
 const fs = require('fs');
 if (!fs.existsSync("./bot_token.txt")) {
 	const stream = fs.createWriteStream('./bot_token.txt');
@@ -55,6 +55,7 @@ if (!fs.existsSync("./bot_token.txt")) {
 	stream.end();
 }
 
+// Read Bot Token from bot_token.txt file
 if (fs.statSync('./bot_token.txt').size == 0) {
 	console.log("./bot_token.txt file is empty")
 } else {
