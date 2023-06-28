@@ -57,9 +57,10 @@ if (!fs.existsSync("./bot_token.txt")) {
 
 // Read Bot Token from bot_token.txt file
 if (fs.statSync('./bot_token.txt').size == 0) {
-	console.log("./bot_token.txt file is empty")
+	console.log("NOTE: ./bot_token.txt file is empty")
 } else {
-	console.log("bot_token.txt file is not empty")
+	console.log("NOTE: ./bot_token.txt file is not empty")
+	console.log("Using bot_token from ./bot_token.txt file")
 	bot_token = fs.readFileSync('./bot_token.txt','utf8');
 }
 
