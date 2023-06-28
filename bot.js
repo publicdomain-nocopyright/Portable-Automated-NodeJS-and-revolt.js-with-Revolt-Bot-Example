@@ -7,7 +7,8 @@ let client = new Client();
 // ----------------------- General Bot information -------------------------
 client.on("ready", async () => {
 	
-	// Open a browser tab in Windows 10; Uses bot user id, opens bot invite url 
+	// Opens a browser tab in Windows 10; Uses bot user id, opens bot invite url 
+	
 	// Check if bot joined any servers yet.
 	if (client.servers.size < 1) {
 		const { spawn } = require('node:child_process')
