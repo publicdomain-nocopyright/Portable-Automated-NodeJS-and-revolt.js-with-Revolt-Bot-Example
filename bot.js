@@ -43,7 +43,8 @@ client.on("messageCreate", async (message) => {
 	}
 });
 
-//  SYNTAX: `node bot.js YOUR_BOT_TOKEN` command line token insertion support 
+// ______command line token insertion support______
+//  SYNTAX: `node bot.js YOUR_BOT_TOKEN` 
 //  NOTE: Ignored if bot_token.txt token exists | Inserted into bot_token.txt if file is empty
 let bot_token = process.argv[2];
 
