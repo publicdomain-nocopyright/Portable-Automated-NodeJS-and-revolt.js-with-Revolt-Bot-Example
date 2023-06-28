@@ -33,12 +33,13 @@ client.on("ready", async () => {
 	
 });
 
+
+// Wait for messages and respond with a message in the guilds where this Bot Exists.
 client.on("messageCreate", async (message) => {
 	if (message.content === "hello") {
 		
 		await message.channel.sendMessage("world");
-		
-		
+
 	}
 });
 
