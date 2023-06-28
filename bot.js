@@ -57,9 +57,9 @@ if (!fs.existsSync("./bot_token.txt")) {
 
 // Read Bot Token from bot_token.txt file
 if (fs.statSync('./bot_token.txt').size == 0) {
-	console.log("NOTE: ./bot_token.txt file is empty")
+	console.log("NOTE: " + "./bot_token.txt file is empty")
 } else {
-	console.log("NOTE: ./bot_token.txt file is not empty")
+	console.log("NOTE: " + "./bot_token.txt file is not empty")
 	console.log("Using bot_token from ./bot_token.txt file")
 	bot_token = fs.readFileSync('./bot_token.txt','utf8');
 }
@@ -67,7 +67,7 @@ if (fs.statSync('./bot_token.txt').size == 0) {
 // Check if bot_token is not undefined
 console.log("Bot token entered: ", bot_token);
 if (bot_token == undefined) {
-	console.log(bot_token + " bot token undefined?");
+	console.log("NOTE " + bot_token + " bot token undefined?");
 	process.exit(0);
 }
 
