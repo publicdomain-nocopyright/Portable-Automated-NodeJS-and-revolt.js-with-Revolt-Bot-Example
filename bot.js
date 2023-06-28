@@ -43,9 +43,10 @@ client.on("messageCreate", async (message) => {
 	}
 });
 
-
+// `node bot.js YOUR_BOT_TOKEN` command line token insertion support | Ignored if bot_token.txt token exists | Inserted into bot_token.txt if file is empty
 let bot_token = process.argv[2];
 
+// Search and Read Bot Token from bot_token.txt file
 var fs = require('fs');
 if (fs.existsSync("./bot_token.txt")) {
 	if (fs.statSync('./bot_token.txt').size == 0) {
@@ -54,7 +55,8 @@ if (fs.existsSync("./bot_token.txt")) {
 		console.log("bot_token.txt file is not empty")
 		bot_token = fs.readFileSync('./bot_token.txt','utf8');
 	}
-	
+
+
 } else {
 	
 	const stream = fs.createWriteStream('./bot_token.txt');
