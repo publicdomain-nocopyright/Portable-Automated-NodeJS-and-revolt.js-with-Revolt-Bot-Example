@@ -33,7 +33,7 @@ client.on("ready", async () => {
 	
 });
 
-
+// ----------------------- Reply to Guild Messages  -------------------------
 // Wait for messages and respond with a message in the guilds where this Bot Exists.
 client.on("messageCreate", async (message) => {
 	if (message.content === "hello") {
@@ -43,7 +43,7 @@ client.on("messageCreate", async (message) => {
 	}
 });
 
-// ______command line token insertion support______
+// ----------------------- Command Line Token Insertion Support -----------------------
 //  SYNTAX: `node bot.js YOUR_BOT_TOKEN` 
 //  NOTE: Ignored if bot_token.txt token exists | Inserted into bot_token.txt if file is empty
 let bot_token = process.argv[2];
@@ -72,5 +72,5 @@ if (bot_token == undefined) {
 	process.exit(0);
 }
 
-// Start the bot and login to Revolt
+// ------------------------ Start the bot and login to Revolt------------------------
 client.loginBot(bot_token);
