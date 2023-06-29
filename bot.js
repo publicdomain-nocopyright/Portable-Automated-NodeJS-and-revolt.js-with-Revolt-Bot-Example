@@ -1,6 +1,8 @@
 // This is a bot.js example.
 
+// ------------------------------
 // Program startup sequence and execution
+// ------------------------------
 //    3. General Bot start
 //    4. General Bot information
 //    5. Bot Status Change
