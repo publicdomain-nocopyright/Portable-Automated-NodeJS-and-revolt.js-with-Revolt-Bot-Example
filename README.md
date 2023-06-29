@@ -14,7 +14,7 @@ Here's how to use `nodejs_downloader.cmd` on Windows 10:
    * Wait for the request of bot token.
    * Create a new bot, copy the bot token, and insert the token.
    * Wait for webpage to Invite the bot into your guild.
-7. Type ` Hello ` in the chat and the bot should respond with ` world `.
+7. Type ` Hello ` in the chat and the bot should respond with ` World `.
 
 Next time, simply type `node bot.js` to run the bot.
 
