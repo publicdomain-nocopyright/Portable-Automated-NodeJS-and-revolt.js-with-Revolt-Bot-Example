@@ -55,9 +55,9 @@ client.on("ready", async () => {
 // ----------------------- 6. Reply to Guild Messages  -------------------------
 // Wait for messages and respond with a message in the guilds where this Bot Exists.
 client.on("messageCreate", async (message) => {
-	if (message.content === "hello") {
+	if (message.content === "Hello") {
 		
-		await message.channel.sendMessage("world");
+		await message.channel.sendMessage("World");
 
 	}
 });
