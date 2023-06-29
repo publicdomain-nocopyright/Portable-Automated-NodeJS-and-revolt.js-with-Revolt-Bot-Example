@@ -24,7 +24,7 @@ client.on("ready", async () => {
 	// Checks if bot joined any servers yet. Opens a browser tab in Windows 10; Uses bot user id, opens bot invite url 
 	if (client.servers.size < 1) {
 		const { spawn } = require('node:child_process')
-		const command = spawn('explorer', ["https://app.revolt.chat/bot/"+ client.user._id])
+		const command = spawn('explorer', ["https://app.revolt.chat/bot/" + client.user._id])
 	}
 	
 /* ----------------------- 4. General Bot information ------------------------- */
@@ -33,17 +33,18 @@ client.on("ready", async () => {
 	console.log(`Running Revolt Bot.`);
 	console.log(`________________________________________`);
 	console.log(`Running: ${__filename}`);
-	console.log("|-NodeJS version: " + process.version);
-	console.log(`|-revolt.js version: ${require(__dirname + '/node_modules/revolt.js/package.json').version}`);
-	console.log(`|-revolt.js repository: ${require(__dirname + '/node_modules/revolt.js/package.json').repository}`);
-	console.info(`|-Client API URL: ${client.api.baseURL}`)
-	console.info(`|-Client API version: ${client.configuration.revolt}`)
+	console.log(" |-NodeJS version: " + process.version);
+	console.log(`  |-revolt.js version: ${require(__dirname + '/node_modules/revolt.js/package.json').version}`);
+	console.log(`  |-revolt.js repository: ${require(__dirname + '/node_modules/revolt.js/package.json').repository}`);
+	console.info(`   |-Client API URL: ${client.api.baseURL}`)
+	console.info(`   |-Client API version: ${client.configuration.revolt}`)
 	
 	console.info(`User ID: ${client.user.id}!`);
 	console.info(`Logged in as ${client.user.username}!`);
 	console.info(`Bot online: ${client.user.online}!`);
-	console.info(`Bot is currently in ${client.servers.size()} Servers: !`);
-
+	console.info(`Bot is currently in ${client.servers.size()} ${client.servers.size() > 1 ? 'servers' : 'server'}.`);
+	console.log(`Invite into more servers: ` + "https://app.revolt.chat/bot/" + client.user.id );
+	
 /* ----------------------- 5. Bot Status Change ------------------------- */
 	
 	client.user.edit({
