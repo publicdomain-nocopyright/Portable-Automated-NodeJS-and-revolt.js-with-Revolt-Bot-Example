@@ -1,5 +1,11 @@
 @ECHO OFF
-TITLE Portable Automated NodeJS with revolt.js and Revolt Bot Example.
+TITLE Portable Automated NodeJS and revolt.js with Revolt Bot Example.
+
+ECHO __________________________________________________________________________
+ECHO.
+ECHO Starting Automated NodeJS and revolt.js with Revolt Bot Example.
+ECHO __________________________________________________________________________
+
 
 SET "requirements_met=true"
 
