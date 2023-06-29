@@ -5,6 +5,7 @@
     4. General Bot information
     5. Bot Status Change
     6. Reply to Guild Messages
+    ___________________________
     0. Import Libraries
     1. Command Line Token Insertion Support `node bot.js YOUR_BOT_TOKEN` 
     2. Start the bot and login to Revolt
