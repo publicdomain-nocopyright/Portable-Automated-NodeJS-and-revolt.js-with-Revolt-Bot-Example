@@ -62,8 +62,9 @@ client.on("messageCreate", async (message) => {
 // -------------------- 1. Command Line Token Insertion Support ---------------------
 //  SYNTAX: `node bot.js YOUR_BOT_TOKEN` 
 //  NOTE: Ignored if bot_token.txt token exists | Inserted into bot_token.txt if file is empty
+let bot_token;
 (function initializeBotToken() {
-	let bot_token = process.argv[2];
+	bot_token = process.argv[2];
 	
 	// Create bot_token.txt file if does not exist.
 	const fs = require('fs');
