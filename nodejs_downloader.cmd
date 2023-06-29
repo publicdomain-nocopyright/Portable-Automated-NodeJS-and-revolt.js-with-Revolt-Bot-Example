@@ -58,7 +58,7 @@ IF %ERRORLEVEL% NEQ 0 echo An error occurred while downloading NodeJS. && pause 
 
 
 ECHO 5. Extracting downloaded NodeJS archive in the current directory
-tar -xvf "./%Filename%" -C ./
+tar -xvf "./%Filename%" -C "./"
 
 ECHO 6. Deleting Downloaded files. 
 DEL "./%Filename%"
