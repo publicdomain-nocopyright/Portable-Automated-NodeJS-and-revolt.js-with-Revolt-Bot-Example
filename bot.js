@@ -1,4 +1,5 @@
 // This is a bot.js example.
+// This Revolt Bot replies to you with a message of   World   when you write   Hello   into the chat. 
 
 // ------------------------------
 // Program startup sequence and execution
