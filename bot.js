@@ -55,31 +55,32 @@ client.on("messageCreate", async (message) => {
 // ----------------------- Command Line Token Insertion Support -----------------------
 //  SYNTAX: `node bot.js YOUR_BOT_TOKEN` 
 //  NOTE: Ignored if bot_token.txt token exists | Inserted into bot_token.txt if file is empty
-let bot_token = process.argv[2];
-
-// Create bot_token.txt file if does not exist.
-const fs = require('fs');
-if (!fs.existsSync("./bot_token.txt")) {
-	const stream = fs.createWriteStream('./bot_token.txt');
-	stream.write("");
-	stream.end();
-}
-
-// Read Bot Token from bot_token.txt file
-if (fs.statSync('./bot_token.txt').size == 0) {
-	console.log("NOTE: " + "./bot_token.txt file is empty")
-} else {
-	console.log("NOTE: " + "./bot_token.txt file is not empty")
-	bot_token = fs.readFileSync('./bot_token.txt','utf8');
-	console.log("NOTE: " + "Using bot_token from ./bot_token.txt file")
-}
-
-// Check if bot_token is not undefined
-console.log("Bot token entered: ", bot_token);
-if (bot_token == undefined) {
-	console.log("NOTE " + bot_token + " bot token undefined?");
-	process.exit(0);
-}
-
+(function initializeBotToken() {
+	let bot_token = process.argv[2];
+	
+	// Create bot_token.txt file if does not exist.
+	const fs = require('fs');
+	if (!fs.existsSync("./bot_token.txt")) {
+		const stream = fs.createWriteStream('./bot_token.txt');
+		stream.write("");
+		stream.end();
+	}
+	
+	// Read Bot Token from bot_token.txt file
+	if (fs.statSync('./bot_token.txt').size == 0) {
+		console.log("NOTE: " + "./bot_token.txt file is empty")
+	} else {
+		console.log("NOTE: " + "./bot_token.txt file is not empty")
+		bot_token = fs.readFileSync('./bot_token.txt','utf8');
+		console.log("NOTE: " + "Using bot_token from ./bot_token.txt file")
+	}
+	
+	// Check if bot_token is not undefined
+	console.log("Bot token entered: ", bot_token);
+	if (bot_token == undefined) {
+		console.log("NOTE " + bot_token + " bot token undefined?");
+		process.exit(0);
+	}
+})();
 // ------------------------ Start the bot and login to Revolt------------------------
 client.loginBot(bot_token);
