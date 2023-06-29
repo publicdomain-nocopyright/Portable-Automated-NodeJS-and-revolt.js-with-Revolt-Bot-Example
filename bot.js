@@ -4,7 +4,7 @@ const { Client } = require("revolt.js");
 
 let client = new Client();
 
-// ----------------------- General Bot information -------------------------
+
 client.on("ready", async () => {
 
 	// Checks if bot joined any servers yet. Opens a browser tab in Windows 10; Uses bot user id, opens bot invite url 
@@ -13,6 +13,7 @@ client.on("ready", async () => {
 		const command = spawn('explorer', ["https://app.revolt.chat/bot/"+ client.user._id])
 	}
 	
+// ----------------------- General Bot information -------------------------
 	console.log(`Running: ${__filename}`);
 	console.log("NodeJS version: " + process.version);
 	console.log(`revolt.js version: ${require(__dirname + '/node_modules/revolt.js/package.json').version}`);
@@ -24,7 +25,9 @@ client.on("ready", async () => {
 	console.info(`Logged in as ${client.user.username}!`);
 	console.info(`Bot online: ${client.user.online}!`);
 	console.info(`Bot is currently in ${client.servers.size()} Servers: !`);
-		
+
+// ----------------------- Bot Status Change -------------------------
+	
 	client.user.edit({
 		status: {
 			text: "Listening to you.",
