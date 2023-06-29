@@ -19,6 +19,13 @@ ECHO All requirements met. You can run the script.
 ECHO Please install the missing requirements and try again. && PAUSE && EXIT
 )
 
+SET "nodeDirectory=.\*node-*"
+IF EXIST "%nodeDirectory%" (
+	CD "%nodeDirectory%"
+	"./node.exe" "./bot.js" 
+)
+
+
 
 
 REM Download SHASUMS256.txt to FIND latest NodeJS release filename
