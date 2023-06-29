@@ -28,6 +28,10 @@ client.on("ready", async () => {
 	}
 	
 /* ----------------------- 4. General Bot information ------------------------- */
+	console.log(`________________________________________`);
+	console.log();
+	console.log(`Running Revolt Bot.`);
+	console.log(`________________________________________`);
 	console.log(`Running: ${__filename}`);
 	console.log("NodeJS version: " + process.version);
 	console.log(`revolt.js version: ${require(__dirname + '/node_modules/revolt.js/package.json').version}`);
