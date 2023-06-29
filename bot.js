@@ -1,4 +1,4 @@
-/* This is a bot.js example.
+/* This is Revolt bot.js example for use with NodeJS.
 
  ========= Program startup sequence and execution =========
     3. General Bot start
