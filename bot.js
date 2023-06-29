@@ -1,4 +1,9 @@
 // This is a bot.js example.
+// * General Bot information
+// * Bot Status Change
+// * Reply to Guild Messages
+// * Command Line Token Insertion Support `node bot.js YOUR_BOT_TOKEN` 
+// * Start the bot and login to Revolt
 
 const { Client } = require("revolt.js");
 
