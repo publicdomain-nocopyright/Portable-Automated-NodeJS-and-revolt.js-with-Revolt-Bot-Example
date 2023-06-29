@@ -1,13 +1,14 @@
-// This is a bot.js example.
+/* This is a bot.js example.
 
-// ========= Program startup sequence and execution =========
-//    3. General Bot start
-//    4. General Bot information
-//    5. Bot Status Change
-//    6. Reply to Guild Messages
-//    0. Import Libraries
-//    1. Command Line Token Insertion Support `node bot.js YOUR_BOT_TOKEN` 
-//    2. Start the bot and login to Revolt
+ ========= Program startup sequence and execution =========
+    3. General Bot start
+    4. General Bot information
+    5. Bot Status Change
+    6. Reply to Guild Messages
+    0. Import Libraries
+    1. Command Line Token Insertion Support `node bot.js YOUR_BOT_TOKEN` 
+    2. Start the bot and login to Revolt
+======================================================================== */
 
 /* ----------------------- 0. Import Libraries  ------------------------- */
 
