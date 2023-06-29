@@ -3,14 +3,17 @@
 //    4. General Bot information
 //    5. Bot Status Change
 //    6. Reply to Guild Messages
+//    0. Import Libraries
 //    1. Command Line Token Insertion Support `node bot.js YOUR_BOT_TOKEN` 
 //    2. Start the bot and login to Revolt
+
+// ----------------------- 0. Import Libraries  -------------------------
 
 const { Client } = require("revolt.js");
 
 let client = new Client();
 
-// ----------------------- General Bot start  -------------------------
+// ----------------------- 3. General Bot start  -------------------------
 
 client.on("ready", async () => {
 
@@ -20,7 +23,7 @@ client.on("ready", async () => {
 		const command = spawn('explorer', ["https://app.revolt.chat/bot/"+ client.user._id])
 	}
 	
-// ----------------------- General Bot information -------------------------
+// ----------------------- 4. General Bot information -------------------------
 	console.log(`Running: ${__filename}`);
 	console.log("NodeJS version: " + process.version);
 	console.log(`revolt.js version: ${require(__dirname + '/node_modules/revolt.js/package.json').version}`);
@@ -33,7 +36,7 @@ client.on("ready", async () => {
 	console.info(`Bot online: ${client.user.online}!`);
 	console.info(`Bot is currently in ${client.servers.size()} Servers: !`);
 
-// ----------------------- Bot Status Change -------------------------
+// ----------------------- 5. Bot Status Change -------------------------
 	
 	client.user.edit({
 		status: {
@@ -44,7 +47,7 @@ client.on("ready", async () => {
 	
 });
 
-// ----------------------- Reply to Guild Messages  -------------------------
+// ----------------------- 6. Reply to Guild Messages  -------------------------
 // Wait for messages and respond with a message in the guilds where this Bot Exists.
 client.on("messageCreate", async (message) => {
 	if (message.content === "hello") {
@@ -54,7 +57,7 @@ client.on("messageCreate", async (message) => {
 	}
 });
 
-// ----------------------- Command Line Token Insertion Support -----------------------
+// -------------------- 1. Command Line Token Insertion Support ---------------------
 //  SYNTAX: `node bot.js YOUR_BOT_TOKEN` 
 //  NOTE: Ignored if bot_token.txt token exists | Inserted into bot_token.txt if file is empty
 (function initializeBotToken() {
@@ -84,5 +87,5 @@ client.on("messageCreate", async (message) => {
 		process.exit(0);
 	}
 })();
-// ------------------------ Start the bot and login to Revolt------------------------
+// ------------------------ 2. Start the bot and login to Revolt------------------------
 client.loginBot(bot_token);
