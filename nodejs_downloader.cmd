@@ -39,14 +39,18 @@ ECHO 1. Downloading SHASUMS256.txt
 curl https://nodejs.org/dist/latest/SHASUMS256.txt > ".\SHASUMS256.txt"
 
 ECHO 2. Parsing each line of second column of SHASUMS256.txt
-FOR /F "tokens=2 delims= " %%i IN (SHASUMS256.txt) DO (
-	ECHO %%i | FIND /I "win-x64.zip" >NUL && ( 
-		ECHO NodeJS filename found. (%%i^)
-		SET "Filename=%%i"
+FOR /F "tokens=1,2" %%a IN (SHASUMS256.txt) DO (
+	ECHO %%b | FIND /I "win-x64.zip" >NUL && ( 
+		ECHO NodeJS filename found. (%%b^)
+		SET "Filename=%%b"
+		SET "SHA256=%%a"
 	) || (
 		REM ECHO %%i filename does not contain string.
 	)
 )
+
+ECHO Hash: %SHA256%
+
 IF "%Filename%"=="" ECHO Latest release filename Not found in the SHASUMS256.txt of https://nodejs.org/dist/latest/ && PAUSE && EXIT
 
 ECHO 3. Splitting filename between .zip file extension and filename (%Filename%)
