@@ -41,6 +41,8 @@ FOR %%f IN ("%Filename%") DO SET "Filename_without_extension=%%~nf"
 
 ECHO 4. Downloading latest NodeJS using Filename.
 curl "https://nodejs.org/dist/latest/%Filename%" -O
+IF %ERRORLEVEL% NEQ 0 echo An error occurred while downloading NodeJS. && pause && exit /b
+
 
 ECHO 5. Extracting downloaded NodeJS archive in the current directory
 tar -xvf "./%Filename%" -C ./
