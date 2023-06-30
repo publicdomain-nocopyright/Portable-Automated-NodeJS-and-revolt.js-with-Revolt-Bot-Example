@@ -25,13 +25,16 @@ ECHO All requirements met. You can run the script.
 ECHO Please install the missing requirements and try again. && PAUSE && EXIT
 )
 
-SET "nodeDirectory=.\*node-*"
-IF EXIST "%nodeDirectory%" (
-	CD "%nodeDirectory%"
-	"./node.exe" "./bot.js" 
+
+SET "nodeDirectory=*node-*"
+IF EXIST ".\%nodeDirectory%" (
+	CD ".\%nodeDirectory%"
+	IF EXIST "completed_tar_extraction_of_nodejs" (
+		"./node.exe" "./bot.js"
+	) ELSE (
+		ECHO Tar extraction of NodeJS was not completed previously.
+	)
 )
-
-
 
 
 REM Download SHASUMS256.txt to FIND latest NodeJS release filename
@@ -63,6 +66,9 @@ IF %ERRORLEVEL% NEQ 0 echo An error occurred while downloading NodeJS. && pause 
 
 ECHO 5. Extracting downloaded NodeJS archive in the current directory
 tar -xvf "./%Filename%" -C "./"
+IF %ERRORLEVEL% equ 0 (
+    ECHO > "./%Filename_without_extension%/completed_tar_extraction_of_nodejs"
+) 
 
 ECHO 6. Deleting Downloaded files. 
 DEL "./%Filename%"
