@@ -136,12 +136,6 @@ let bot_token;
 })();
 /* ------------------------ 2. Start the bot and login to Revolt------------------------ */
 client.loginBot(bot_token);
-
-
-
-
-
-
 const readline = require('readline');
 
 // Create a readline interface
@@ -150,15 +144,27 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-let botIsRunning = false; // Variable to track whether the bot is already running
+
 
 function restartScript() {
   const spawn = require('child_process').spawn;
+
   const node = process.argv[0]; // Get the path to the Node.js executable
   const script = process.argv[1]; // Get the path to the current script
 
   spawn(node, [script], { stdio: 'inherit' });
-  process.exit(); // Exit the current script
+  //process.exit();
+}
+
+
+// Start your bot's work
+startBot();
+
+// Function to start your bot's work
+function startBot() {
+  // Your bot's code and logic goes here
+  
+  // Example: Display a message every second
 }
 
 // Handle user input in the command prompt
@@ -168,42 +174,21 @@ rl.on('line', (input) => {
   // Example: Stop the bot if the user enters "stop"
   if (input === "stop") {
     console.log("Stopping the bot...");
-    // Perform any necessary cleanup or stopping actions
-    botIsRunning = false;
-    rl.pause(); // Pause the readline interface
+    rl.close(); // Close the readline interface
   }
   
-  // Example: Restart the bot if the user enters "restart"
+  // Example: Stop the bot if the user enters "stop"
   if (input === "restart") {
-    console.log("Restarting the bot...");
-    // Perform any necessary cleanup or restarting actions
-    restartScript();
-    rl.pause(); // Pause the readline interface
+  console.log("restarting...");
+  restartScript();
   }
+  
 });
+
+
 
 // Handle the readline close event
 rl.on('close', () => {
   console.log("Exiting...");
-  process.exit(0); // Exit the Node.js process
+  //process.exit(0); // Exit the Node.js process
 });
-
-// Start your bot's work
-startBot();
-
-// Function to start your bot's work
-function startBot() {
-  // If the bot is already running, don't start it again
-  if (botIsRunning) {
-    return;
-  }
-
-  botIsRunning = true;
-
-  // Your bot's code and logic goes here
-  
-  // Example: Display a message every second
-  setInterval(() => {
-    console.log("Bot is working...");
-  }, 1000);
-}
