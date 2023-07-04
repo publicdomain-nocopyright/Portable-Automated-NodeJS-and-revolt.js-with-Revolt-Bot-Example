@@ -54,7 +54,22 @@ client.on("ready", async () => {
 		},
 	});
 	
+	
+	
+// Bot set self nickname on all the servers.
+	//Split Bot name into two words before displaying
+	const splitWord = client.user.username.replace(/([a-z])([A-Z])/g, '$1 $2');
+	client.servers.forEach(async (values, keys, objects) => {
+		await values.member.edit({
+			
+			nickname: `${splitWord}`
+			
+		});	
+	});
+	
 });
+
+
 
 /* ----------------------- 6. Reply to Guild Messages  ------------------------- */
 // Wait for messages and respond with a message in the guilds where this Bot Exists.
