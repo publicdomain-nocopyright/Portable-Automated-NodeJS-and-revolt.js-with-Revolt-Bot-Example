@@ -84,7 +84,7 @@ client.on("messageCreate", async (message) => {
 
 	}
 	
-	// Support for @BotUsername
+	// Support for @BotUsername in the chat
 	if (message.authorId !== client.user.id){
 		if (message.content.includes(`<@${client.user.id}> ` + "write")) {
 		await message.channel.sendMessage("Written");
