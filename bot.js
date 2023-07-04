@@ -80,8 +80,7 @@ client.on("messageCreate", async (message) => {
 		
 		// Bot Needs permission "ManageMessages"
 		//await message.delete();
-		
-
+		return;
 	}
 	
 	// Support for @BotUsername in the chat
