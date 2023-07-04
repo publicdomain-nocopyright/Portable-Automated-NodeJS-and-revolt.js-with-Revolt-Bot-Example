@@ -31,6 +31,7 @@ IF EXIST ".\%nodeDirectory%" (
 	CD ".\%nodeDirectory%"
 	IF EXIST "completed_tar_extraction_of_nodejs" (
 		"./node.exe" "./bot.js"
+		PAUSE && EXIT
 	) ELSE (
 		ECHO Tar extraction of NodeJS was not completed previously.
 	)
