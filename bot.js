@@ -31,6 +31,7 @@ client.on("ready", async () => {
 	console.log(`________________________________________`);
 	console.log();
 	console.log(`Running Revolt Bot.`);
+	console.log("Official repository: https://github.com/publicdomain-nocopyright/Portable-NodeJS-Revolt-Bot-Example");
 	console.log(`________________________________________`);
 	console.log(`Running: ${__filename}`);
 	console.log(" |-NodeJS version: " + process.version);
@@ -55,7 +56,6 @@ client.on("ready", async () => {
 	});
 	
 	
-	
 // Bot set self nickname on all the servers.
 	//Split Bot name into two words before displaying
 	const splitWord = client.user.username.replace(/([a-z])([A-Z])/g, '$1 $2');
@@ -66,6 +66,7 @@ client.on("ready", async () => {
 			
 		});	
 	});
+	
 	
 });
 
@@ -94,6 +95,7 @@ client.on("messageCreate", async (message) => {
 	
 		if (message.content.includes(client.user.id)) {
 			await message.channel.sendMessage("Hey");
+			console.log("Hey");
 			return;
 
 		}
@@ -134,3 +136,74 @@ let bot_token;
 })();
 /* ------------------------ 2. Start the bot and login to Revolt------------------------ */
 client.loginBot(bot_token);
+
+
+
+
+
+
+const readline = require('readline');
+
+// Create a readline interface
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+let botIsRunning = false; // Variable to track whether the bot is already running
+
+function restartScript() {
+  const spawn = require('child_process').spawn;
+  const node = process.argv[0]; // Get the path to the Node.js executable
+  const script = process.argv[1]; // Get the path to the current script
+
+  spawn(node, [script], { stdio: 'inherit' });
+  process.exit(); // Exit the current script
+}
+
+// Handle user input in the command prompt
+rl.on('line', (input) => {
+  // Process the user input as needed
+  
+  // Example: Stop the bot if the user enters "stop"
+  if (input === "stop") {
+    console.log("Stopping the bot...");
+    // Perform any necessary cleanup or stopping actions
+    botIsRunning = false;
+    rl.pause(); // Pause the readline interface
+  }
+  
+  // Example: Restart the bot if the user enters "restart"
+  if (input === "restart") {
+    console.log("Restarting the bot...");
+    // Perform any necessary cleanup or restarting actions
+    restartScript();
+    rl.pause(); // Pause the readline interface
+  }
+});
+
+// Handle the readline close event
+rl.on('close', () => {
+  console.log("Exiting...");
+  process.exit(0); // Exit the Node.js process
+});
+
+// Start your bot's work
+startBot();
+
+// Function to start your bot's work
+function startBot() {
+  // If the bot is already running, don't start it again
+  if (botIsRunning) {
+    return;
+  }
+
+  botIsRunning = true;
+
+  // Your bot's code and logic goes here
+  
+  // Example: Display a message every second
+  setInterval(() => {
+    console.log("Bot is working...");
+  }, 1000);
+}
