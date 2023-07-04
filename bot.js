@@ -83,6 +83,12 @@ client.on("messageCreate", async (message) => {
 		
 
 	}
+	
+	// Support for @BotUsername
+	if (message.authorId !== client.user.id && message.content.includes(client.user.id)) {
+		await message.channel.sendMessage("Hey");
+
+	}
 
 });
 
