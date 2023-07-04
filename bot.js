@@ -85,11 +85,19 @@ client.on("messageCreate", async (message) => {
 	}
 	
 	// Support for @BotUsername
-	if (message.authorId !== client.user.id && message.content.includes(client.user.id)) {
-		await message.channel.sendMessage("Hey");
+	if (message.authorId !== client.user.id){
+		if (message.content.includes(`<@${client.user.id}> ` + "write")) {
+		await message.channel.sendMessage("Written");
+		return;
 
 	}
+	
+	if (message.content.includes(client.user.id)) {
+		await message.channel.sendMessage("Hey");
+		return;
 
+	}
+	}
 });
 
 /* -------------------- 1. Command Line Token Insertion Support --------------------- */
