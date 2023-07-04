@@ -77,8 +77,13 @@ client.on("messageCreate", async (message) => {
 	if (message.content === "Hello") {
 		
 		await message.channel.sendMessage("World");
+		
+		// Bot Needs permission "ManageMessages"
+		//await message.delete();
+		
 
 	}
+
 });
 
 /* -------------------- 1. Command Line Token Insertion Support --------------------- */
