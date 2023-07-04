@@ -86,16 +86,16 @@ client.on("messageCreate", async (message) => {
 	// Support for @BotUsername in the chat
 	if (message.authorId !== client.user.id){
 		if (message.content.includes(`<@${client.user.id}> ` + "write")) {
-		await message.channel.sendMessage("Written");
-		return;
+			await message.channel.sendMessage("Written");
+			return;
 
-	}
+		}
 	
-	if (message.content.includes(client.user.id)) {
-		await message.channel.sendMessage("Hey");
-		return;
+		if (message.content.includes(client.user.id)) {
+			await message.channel.sendMessage("Hey");
+			return;
 
-	}
+		}
 	}
 });
 
