@@ -7,3 +7,5 @@ I really do not want to put the function into a separate file and try to delete 
 Even if it all have some chance to work.
 4:37
 Maybe someone have some understanding on how could I ensure the newly spawned child would include the changes of function()
+
+Could probably be achieved by importing the function from current file. Using require. Before that deleting require.cache.
