@@ -9,3 +9,4 @@ Even if it all have some chance to work.
 Maybe someone have some understanding on how could I ensure the newly spawned child would include the changes of function()
 
 Could probably be achieved by importing the function from current file. Using require. Before that deleting require.cache.
+Needs to overwrite current function definition.
